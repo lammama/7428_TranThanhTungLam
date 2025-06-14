@@ -1,3 +1,3 @@
-Import streamlit as st
-st.title('hello word')
+import streamlit as st
+st.title('hello')
 
