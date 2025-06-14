@@ -1,5 +1,5 @@
-import streamlit as st
-st.title('hello')
+pip install streamlit
+
 
 import streamlit as st
 import random
@@ -45,3 +45,4 @@ if st.button("🔄 Chơi lại"):
     st.session_state.player_positions = {'Xanh': 0, 'Đỏ': 0}
     st.session_state.turn = 'Xanh'
     st.session_state.winner = None
+streamlit run ludo_streamlit.py
