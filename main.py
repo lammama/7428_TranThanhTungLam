@@ -1,30 +1,12 @@
-import pygame
-pygame.init()
+import streamlit as st
 
-screen = pygame.display.set_mode((800, 400))
-clock = pygame.time.Clock()
-gravity = 0
-player_y = 300
-jumping = False
+st.set_page_config(page_title="🎮 Mario Game", layout="wide")
 
-while True:
-    screen.fill((135, 206, 235))  # màu trời
+st.title("🎮 Chơi Mario ngay trên trình duyệt!")
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-        if event.type == pygame.KEYDOWN and not jumping:
-            if event.key == pygame.K_SPACE:
-                gravity = -15
-                jumping = True
+st.markdown("Mario HTML5 mini game được nhúng dưới đây:")
 
-    gravity += 1
-    player_y += gravity
-    if player_y >= 300:
-        player_y = 300
-        jumping = False
+# Nhúng game Mario HTML5 từ Internet (hoặc tự host)
+mario_game_url = "https://supermarioemulator.com/mario.php"
 
-    pygame.draw.rect(screen, (255, 0, 0), (100, player_y, 50, 50))  # hình đại diện Mario
-    pygame.display.update()
-    clock.tick(60)
+st.components.v1.iframe(src=mario_game_url, width=800, height=600, scrolling=False)
